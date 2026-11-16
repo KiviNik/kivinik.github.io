@@ -1,64 +1,27 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)https://leafletjs.com/examples/quick-start/example-basic.html -->
-<html lang="en" class=" idc0_343 ixdqtyy"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<!--<base target="_top">--><base href="." target="_top">
-	
+<html>
+<head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Basic Setup Example - Leaflet</title>
-	
-	<link rel="icon" href="https://leafletjs.com/docs/images/favicon.svg" type="image/svg+xml">
-
-	
-	<link rel="stylesheet" href="./Basic Setup Example - Leaflet_files/leaflet.css" integrity="sha256-AWTc12F4bU4GqRtfkaV/Tgn6ZxlRNjBJnTsXVNtP4XM=" crossorigin="">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css">
 	<script type="importmap">
-		{
-			"imports": {
-				"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"
-			},
-			"integrity": {
-				"https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js": "sha256-fRxwnl7F1oxlc3UchsWMQTaexLgt14hIMYKEjoeSdZ8="
-			}
-		}
+		{"imports": {"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"}}
 	</script>
-
-
-	<style>
-		html, body {
-			height: 100%;
-			margin: 0;
-		}
-		.leaflet-container {
-			height: 100%;
-		}
-	</style>
-
-	
-<style id="country-flag-fixer-ext-head">@font-face {
-        font-family: "Twemoji Country Flags";
-        font-style: normal;
-        font-weight: 100 900;
-        src: url("chrome-extension://jhcpefjbhmbkgjgipkhndplfbhdecijh/fonts/TwemojiCountryFlags.woff2") format("woff2");
-        unicode-range: U+1F1E6-1F1FF,U+1F3F4,U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;
-      }
-@font-face {
-        font-family: "Twemoji Country Flags";
-        font-style: italic;
-        font-weight: 100 900;
-        src: url("chrome-extension://jhcpefjbhmbkgjgipkhndplfbhdecijh/fonts/TwemojiCountryFlags.woff2") format("woff2");
-        unicode-range: U+1F1E6-1F1FF,U+1F3F4,U+E0062-E0063,U+E0065,U+E0067,U+E006C,U+E006E,U+E0073-E0074,U+E0077,U+E007F;
-      }</style></head>
+</head>
 <body>
+	<div id="map" style="height: 400px"></div>
+	<script type="module">
+		import {LeafletMap, TileLayer} from 'leaflet';
+		// the map code goes here
+		const map = new LeafletMap('map').setView([51.505, -0.159], 15);
 
-<div id="map" role="region" aria-label="Map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-box-zoom leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer leaflet-zoom-animated " style="z-index: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(716px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(972px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(716px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(972px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(716px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(972px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(460px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1228px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(460px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1228px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(716px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(972px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(460px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1228px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(460px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1228px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(204px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1484px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(204px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1484px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(204px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1484px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(204px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(5).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1484px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(-52px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2723(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1740px, 171px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(-52px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2724(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1740px, 427px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(-52px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2722(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1740px, -85px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(6).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(-52px, 683px);"><img referrerpolicy="strict-origin-when-cross-origin" alt="" src="./Basic Setup Example - Leaflet_files/2725(7).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate(1740px, 683px);"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.04805e+06px, 697379px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="https://leafletjs.com/examples/quick-start/example-basic.html#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><svg width="12" height="12" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6h12M6 0v12"></path></svg></a><a class="leaflet-control-zoom-out" href="https://leafletjs.com/examples/quick-start/example-basic.html#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><svg width="12" height="12" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M0 6h12"></path></svg></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a target="_blank" href="https://leafletjs.com/" title="A JavaScript library for interactive maps"><svg aria-hidden="true" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg>Leaflet</a> <span aria-hidden="true">|</span> © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></div></div></div></div>
+		new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
 
-<script type="module">
-	import {LeafletMap, TileLayer} from 'leaflet';
-
-	const map = new LeafletMap('map').setView([51.505, -0.09], 13);
-</script>
-
-
-
-
-</body></html>
+		new Marker([51.504, -0.159]).addTo(map)
+			.bindPopup('A pretty CSS popup.<br>Easily customizable.')
+			.openPopup();
+	</script>
+</body>
+</html>
