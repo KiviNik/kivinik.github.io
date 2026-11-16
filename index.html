@@ -41,6 +41,44 @@
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        // Загружаем данные (работает только через HTTP-сервер, не через file://)
+        fetch("data.json")
+          .then(r => r.json())
+          .then(data => {
+            data.features.forEach(feature => {
+              const p = feature.properties;
+              const [lng, lat] = feature.geometry.coordinates;
+
+              // Формируем текст всплывающего окна
+              const langs = Object.entries(p)
+                .filter(([key, val]) =>
+                  !["№","субъ1","субъ2","район","Н.п.","Всего","lat","lon"].includes(key)
+                  && val && val > 0
+                )
+                .sort((a, b) => b[1] - a[1])          // сортируем по убыванию
+                .slice(0, 5)                            // топ-5 языков
+                .map(([lang, count]) => `<b>${lang}</b>: ${count}`)
+                .join("<br>");
+
+              const popup = `
+                <strong>${p["Н.п."]}</strong><br>
+                Население: ${p["Всего"]}<br><hr>
+                Топ языки:<br>${langs}
+              `;
+
+              L.circleMarker([lat, lng], {
+                radius: Math.max(4, Math.sqrt(p["Всего"]) / 5), // размер ~ население
+                color: "#2563eb",
+                fillColor: "#3b82f6",
+                fillOpacity: 0.7,
+                weight: 1
+              })
+              .addTo(map)
+              .bindPopup(popup);
+            });
+          });
     </script>
+    
 </body>
 </html>
